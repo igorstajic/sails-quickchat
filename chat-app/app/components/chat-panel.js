@@ -10,7 +10,7 @@ export default Ember.Component.extend({
     this._super(...arguments);
     //Init message list
     this.get('ajax').request('/chat').then(res => this.set('messages', res));
-    io.socket.get('/chat/');
+    io.socket.get('http://quickchat-istajic.rhcloud.com:8000/chat/');
     io.socket.on('chat', (msg) => {
       this.get('messages').pushObject(msg.data);
     });
