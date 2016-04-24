@@ -12,7 +12,7 @@ export default Ember.Component.extend({
     this.get('ajax').request('/chat').then(res => this.set('messages', res));
     io.socket.get('/chat/');
     io.socket.on('chat', (msg) => {
-      this.get('messages').pushObject(msg.data);    
+      this.get('messages').pushObject(msg.data);
     });
   },
   actions: {

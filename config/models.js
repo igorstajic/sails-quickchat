@@ -28,6 +28,6 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
   // migrate: 'alter'
-  connection: 'herokuDb',
-  migrate: 'safe'
+  connection: 'someMysqlServer',
+  migrate: 'alter'
 };

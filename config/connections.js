@@ -40,13 +40,13 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
-  // someMysqlServer: {
-  //   adapter: 'sails-mysql',
-  //   host: 'YOUR_MYSQL_SERVER_HOSTNAME_OR_IP_ADDRESS',
-  //   user: 'YOUR_MYSQL_USER', //optional
-  //   password: 'YOUR_MYSQL_PASSWORD', //optional
-  //   database: 'YOUR_MYSQL_DB' //optional
-  // },
+  someMysqlServer: {
+    adapter: 'sails-mysql',
+    host: process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
+    user: 'adminSKRhyTJ', //optional
+    password: '8qLxfU1KSeSq', //optional
+    database: 'quickchat' //optional
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -74,14 +74,6 @@ module.exports.connections = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-  herokuDb: {
-    ssl: true,
-    adapter: 'sails-postgresql',
-    host: 'ec2-54-228-246-19.eu-west-1.compute.amazonaws.com',
-    user: 'nuireuimeqbzio', // optional
-    password: 'J3yhqGk9mHdrAjQZG81hSa_0H4', // optional
-    database: 'd54t0sqhmo3sko' //optional
-  }
 
   /***************************************************************************
   *                                                                          *
