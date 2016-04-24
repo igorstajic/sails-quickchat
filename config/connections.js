@@ -42,7 +42,7 @@ module.exports.connections = {
   ***************************************************************************/
   someMysqlServer: {
     adapter: 'sails-mysql',
-    host: process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
+    host: process.env.OPENSHIFT_MYSQL_DB_HOST || '127.0.0.1',
     user: 'adminSKRhyTJ', //optional
     password: '8qLxfU1KSeSq', //optional
     database: 'quickchat' //optional
