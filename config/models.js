@@ -29,5 +29,5 @@ module.exports.models = {
   ***************************************************************************/
   // migrate: 'alter'
   connection: 'herokuDb',
-  migrate: 'drop'
+  migrate: 'safe'
 };
