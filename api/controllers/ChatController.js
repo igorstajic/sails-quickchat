@@ -14,8 +14,6 @@ module.exports = {
           sails.log(err);
           sails.log("Error occurred in database operation");
         } else {
-          sails.log("data:", res.insertId)
-
           Chat.publishCreate({
             id: res.insertId,
             message: data.message,
@@ -33,7 +31,6 @@ module.exports = {
           sails.log(err);
           sails.log("Error occurred in database operation");
         } else {
-          sails.log('sending:', rows)
           res.send(rows);
         }
       });
