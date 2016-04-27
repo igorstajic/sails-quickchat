@@ -4,13 +4,13 @@ const {
 } = Ember;
 export default Ember.Component.extend({
   messages: [],
-  sockjs: Ember.inject.service(),
   ajax: Ember.inject.service(),
   init() {
     this._super(...arguments);
     //Init message list
+    io.sails.url = 'http://quickchat-istajic.rhcloud.com:8000';
     this.get('ajax').request('/chat').then(res => this.set('messages', res));
-    io.socket.get('http://quickchat-istajic.rhcloud.com:8000/chat/');
+    io.socket.get('/chat/');
     io.socket.on('chat', (msg) => {
       this.get('messages').pushObject(msg.data);
     });
