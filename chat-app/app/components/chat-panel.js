@@ -8,7 +8,8 @@ export default Ember.Component.extend({
   init() {
     this._super(...arguments);
     //Init message list
-    io.sails.url = 'http://quickchat-istajic.rhcloud.com:8000';
+    io.sails.url = 'https://quickchat-istajic.rhcloud.com:8443';
+    // io.sails.url = 'http://localhost:1337';
     this.get('ajax').request('/chat').then(res => this.set('messages', res));
     io.socket.get('/chat/');
     io.socket.on('chat', (msg) => {
